@@ -24,8 +24,8 @@ class RandomWords extends StatefulWidget {
 }
 
 class _RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-  final _biggerFont = const TextStyle(fontSize: 18);
+  final _suggestions = <WordPair>[]; //List for names
+  final _biggerFont = const TextStyle(fontSize: 18); //Styling
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,16 +39,12 @@ class _RandomWordsState extends State<RandomWords> {
   Widget _buildSuggestions() {
     return ListView.builder(
       padding: const EdgeInsets.all(16),
-      // The itemBuilder callback is called once per suggested
-      // word pairing, and places each suggestion into a ListTile
-      // row. For even rows, the function adds a ListTile row for
-      // the word pairing. For odd rows, the function adds a
-      // Divider widget to visually separate the entries. Note that
-      // the divider may be difficult to see on smaller devices.
       itemBuilder: (context, i) {
-        // Add a one-pixel-high divider widget before each row
-        // in the ListView.
+        //Uses i as an iterator to
+        //keep track of theindex
+
         if (i.isOdd) {
+          //add divider between each index
           return const Divider();
         }
 
